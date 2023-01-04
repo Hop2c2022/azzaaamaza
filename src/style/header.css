@@ -1,0 +1,24 @@
+.header1{
+    /* width: 274px; */
+    height: 23px;
+
+    font-family: 'Ubuntu';
+    font-weight: 800;
+    font-size: 25px;
+    line-height: 23px;
+    text-transform: uppercase;
+
+    color: #02B589;
+}
+
+.header2{
+    width: 183px;
+    height: 44px;
+    background-color: #02B589;
+    border-radius: 100px;
+    border: none;
+    color: white;
+    font-family: 'Ubuntu';
+    font-weight: 800;
+    font-size: 20px;
+}

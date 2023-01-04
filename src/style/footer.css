@@ -1,0 +1,22 @@
+.footer {
+  height: 45vh;
+}
+.footer1 {
+  font-family: "Ubuntu";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+
+  color: #000000;
+}
+.footer2 {
+  font-family: "Ubuntu";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+
+  color: #000000;
+
+  opacity: 0.2;
+}
