@@ -1,40 +1,106 @@
-import { Header1 } from "../components/header1"
-import { Footer } from "../components/footer"
-import { Header2 } from "../components/header2"
-import '../style/nevtreh.css'
+import { Header1 } from "../components/header1";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
+import "../style/nevtreh.css";
+
 export const Nevtreh = () => {
-    return(
-        <div className="d-flex flex-column justify-content-center">
-            <div><Header1/></div>
-            <div className="d-flex flex-column">
-                <div>
-                    <img src="logo-default.svg" alt="" />
-                </div>
-                <div class = "nevtreh">Нэвтрэх</div>
-                <div class = "d-flex flex-column">
-                    <div class = "tsahimHayag">Цахим хаяг</div>
-                    <input class="email" type="email" placeholder="name@mail.domain"/>
-                </div>
-                <div class = "d-flex flex-column">
-                    <div class = "tsahimHayag">Нууц үг</div>
-                    <input class="email" type="password" placeholder="••••••••••" />
-                </div>
-                <div class = "d-flex flex-row">
-                    <div class = "d-flex flex-row">
-                        <label class = "container">
-                            <input type="checkbox" checked = "checked" />
-                            <span class = "checkmark"></span>
-                        </label>
-                        <div class="nmgSana">Намайг сана</div>
-                    </div>
-                    <div class = "nuutsUg">Нууц үгээ мартсан</div>
-                </div>
-                <div>
-                    <Header2/>
-                </div>
-                <div class = "shine">Шинэ хэрэглэгч бол энд дарна уу?</div>
-            </div>
-            <div><Footer/></div>
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const navigate = useNavigate();
+  const data = async () => {
+    const result = await axios.get(`http://localhost:8000/Login/${email}`);
+    console.log(result);
+    if (password === result?.data?.data?.password) {
+      console.log("success logged in");
+      navigate("/");
+    } else {
+      alert("incorrect password");
+    }
+  };
+
+  return (
+    <div className="d-flex flex-column justify-content-center">
+      <div>
+        <Header1 />
+      </div>
+      <div className="d-flex flex-column">
+        <div className=" d-flex justify-content-center align-items-center">
+          <img
+            class="mt-5"
+            style={{ height: "100px" }}
+            src="logo-default.svg"
+            alt=""
+          />
         </div>
-    )
-}
+        <div class="nevtreh d-flex justify-content-center align-items-center">
+          Нэвтрэх
+        </div>
+        <div class="d-flex flex-column justify-content-center align-items-center">
+          <div
+            class="mb-2 mt-2"
+            style={{
+              marginRight: "50px",
+              width: "300px",
+              fontWeight: "bold",
+              fontSize: "16px",
+              lineHeight: "18px",
+            }}
+          >
+            Цахим хаяг
+          </div>
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            class="email"
+            type="email"
+            placeholder="name@mail.domain"
+            style={{ width: "350px" }}
+          />
+        </div>
+        <div class="d-flex flex-column justify-content-center align-items-center">
+          <div class="tsahimHayag mb-2 mt-2" style={{ marginRight: "260px" }}>
+            Нууц үг
+          </div>
+          <input
+            onChange={(e) => setPassword(e.target.value)}
+            class="email"
+            type="password"
+            placeholder="••••••••••"
+            style={{ width: "350px" }}
+          />
+        </div>
+        <div
+          class="d-flex flex-row justify-content-center align-items-center"
+          style={{}}
+        >
+          <div
+            class="d-flex flex-row justify-content-center mt-3"
+            style={{ marginRight: "90px" }}
+          >
+            <label class="container">
+              <input type="checkbox" />
+              <span class="nmgSana ">Намайг сана</span>
+            </label>
+          </div>
+          <Link to="/ForgotPass">
+            <div class="nuutsUg mt-4">Нууц үгээ мартсан</div>
+          </Link>
+        </div>
+        <div className="d-flex justify-content-center align-items-center">
+          <button class="nevtreh2 mt-4" onClick={() => data()}>
+            НЭВТРЭХ
+          </button>
+        </div>
+        <Link to="/SignUp">
+          <div class="shine mt-4 d-flex justify-content-center">
+            Шинэ хэрэглэгч бол энд дарна уу?
+          </div>
+        </Link>
+      </div>
+      <div className="d-flex flex-column justify-content-end align-items-center footerLogin">
+        <div class="footerN1">Made with ♥️ by Pinecone Academy</div>
+        <div class="footerN2">©boginoo.io 2022</div>
+      </div>
+    </div>
+  );
+};

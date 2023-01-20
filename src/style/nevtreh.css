@@ -1,5 +1,5 @@
 .nevtreh {
-  height: 23px;
+  height: 100px;
 
   font-family: "Ubuntu";
   font-weight: 800;
@@ -11,7 +11,7 @@
 }
 
 .email {
-  width: 500px;
+  width: 350px;
   height: 44px;
   background: #ffffff;
   border: 1px solid #f0f0f0;
@@ -27,37 +27,76 @@
   padding-left: 20px;
 }
 
-.tsahimHayag{
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 18px;
+.tsahimHayag {
+  width: 85px;
+  height: 18px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 18px;
 
-    color: #000000;
-
+  color: #000000;
 }
-.nmgSana{
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 18px;
+.nmgSana {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
 
-    color: #02B589;
-}
-
-.nuutsUg{
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 18px;
-    text-decoration-line: underline;
-
-    color: #333333;
+  color: #02b589;
 }
 
-.shine{
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 18px;
-    text-decoration-line: underline;
+.nuutsUg {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  text-decoration-line: underline;
 
-    color: #02B589;
+  color: #333333;
+}
+
+.footerLogin {
+  height: 45vh;
+}
+.footerN1 {
+  font-family: "Ubuntu";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+
+  color: #000000;
+}
+.footerN2 {
+  font-family: "Ubuntu";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+
+  color: #000000;
+
+  opacity: 0.2;
+}
+
+.shine {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  text-decoration-line: underline;
+
+  color: #02b589;
+}
+.container input:checked {
+  border-color: #02b589;
+  background-color: #02b589;
+}
+.nevtreh2 {
+  width: 350px;
+  height: 44px;
+  background-color: #02b589;
+  border-radius: 100px;
+  border: none;
+  color: white;
+  font-family: "Ubuntu";
+  font-weight: 800;
+  font-size: 20px;
 }
