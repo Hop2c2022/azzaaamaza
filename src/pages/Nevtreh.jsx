@@ -9,13 +9,13 @@ export const Nevtreh = () => {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
   const data = async () => {
-    const result = await axios.get(`http://localhost:8000/Login/${email}`);
-    console.log(result);
-    if (password === result?.data?.data?.password) {
-      console.log("success logged in");
-      navigate("/");
-    } else {
-      alert("incorrect password");
+    const result = await axios.post(`http://localhost:8000/Login`, {
+      email: email,
+      password: password,
+    });
+
+    if (result.token) {
+      localStorage.setItem("token", result.token);
     }
   };
 
