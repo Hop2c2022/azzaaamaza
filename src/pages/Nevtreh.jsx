@@ -1,5 +1,5 @@
 import { Header1 } from "../components/header1";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import "../style/nevtreh.css";
@@ -7,16 +7,16 @@ import "../style/nevtreh.css";
 export const Nevtreh = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const navigate = useNavigate();
   const data = async () => {
-    const result = await axios.post(`http://localhost:8000/Login`, {
+    const result = await axios.post("http://localhost:8000/Login", {
       email: email,
       password: password,
     });
+    localStorage.setItem("token", result?.data?.token);
 
-    if (result.token) {
-      localStorage.setItem("token", result.token);
-    }
+    // if (result.token) {
+    //   localStorage.setItem("token", result.token);
+    // }
   };
 
   return (
@@ -87,6 +87,15 @@ export const Nevtreh = () => {
           </Link>
         </div>
         <div className="d-flex justify-content-center align-items-center">
+          {/* {User ? (
+            <div>
+              {User?.email}
+            </div>
+          ) : (
+            <button class="nevtreh2 mt-4" onClick={() => data()}>
+            НЭВТРЭХ
+          </button>
+          )} */}
           <button class="nevtreh2 mt-4" onClick={() => data()}>
             НЭВТРЭХ
           </button>

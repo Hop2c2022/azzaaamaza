@@ -8,8 +8,8 @@ import { AuthProvider } from "./themeContext";
 
 function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <AuthProvider>
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<Nevtreh />}></Route>
@@ -17,8 +17,8 @@ function App() {
           <Route path="/SignUp" element={<Burtguuleh />}></Route>
           <Route path="/burtguuleh" element={<Burtguuleh />}></Route>
         </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 
